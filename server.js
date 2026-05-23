@@ -11,6 +11,10 @@ app.use(
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
+
 app.post("/submit-cv", (req, res) => {
   console.log(req.body);
 
