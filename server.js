@@ -3,17 +3,15 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Backend is running");
 });
+
+app.options("*", cors());
 
 app.post("/submit-cv", (req, res) => {
   console.log(req.body);
