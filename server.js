@@ -11,8 +11,6 @@ app.get("/", (req, res) => {
   res.send("Backend is running");
 });
 
-app.options("*", cors());
-
 app.post("/submit-cv", (req, res) => {
   console.log(req.body);
 
