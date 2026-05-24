@@ -6,8 +6,6 @@ const app = express();
 app.use(
   cors({
     origin: "https://faculty-cv-system.vercel.app",
-    methods: ["GET", "POST"],
-    credentials: true,
   })
 );
 
@@ -20,7 +18,7 @@ app.get("/", (req, res) => {
 app.post("/submit-cv", (req, res) => {
   console.log(req.body);
 
-  res.status(200).json({
+  res.json({
     message: "CV submitted successfully",
   });
 });
